@@ -1,11 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CodeLab - JavaScript Tutorijal</title>
+   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
-    
+
+
+<header>
+
+  <div class="logo">
+    Code<span>Lab</span>
+  </div>
+
+  <nav>
+
+    <a href="#lekcije">Lekcije</a>
+
+    <a href="#pretraga">Pretraga</a>
+
+    <a href="#profil">Profil</a>
+
+    <a href="#komentari">Komentari</a>
+
+  </nav>
+
+</header>
+
+
+
+<section class="hero">
+
+  <h1>JavaScript Tutorijal</h1>
+
+  <p>
+    Nauči osnove JavaScript-a kroz kratke lekcije i primere.
+  </p>
+
+</section>
+
+
+
+<main>
+
+
+  <!-- ===================================== -->
+  <!-- PRETRAGA -->
+  <!-- NAMERNO RANJIVA NA XSS -->
+  <!-- ===================================== -->
+
+  <section class="section" id="pretraga">
+
+    <h2 class="section-title">
+      Pretraga tutorijala
+    </h2>
+
+    <p>
+      Pretraži lekcije po nazivu ili pojmu.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Na primer: promenljive"
+      >
+
+      <button onclick="searchTutorials()">
+        Pretraži
+      </button>
+
+    </div>
+
+
+    <div id="searchResult"></div>
+
+  </section>
+
+
+
+  <!-- ===================================== -->
+  <!-- LEKCIJE -->
+  <!-- ===================================== -->
+
+  <section class="section" id="lekcije">
+
+    <h2 class="section-title">
+      JavaScript lekcije
+    </h2>
+
+
+    <div class="lessons">
+
+
+      <div class="lesson">
+
+        <span class="tag">
+          Osnove
+        </span>
+
+        <h3>Promenljive</h3>
+
+        <p>
+          Nauči kako se koriste let, const i promenljive
+          u JavaScript-u.
+        </p>
+
+      </div>
+
+
+
+      <div class="lesson">
+
+        <span class="tag">
+          Uslovi
+        </span>
+
+        <h3>if / else</h3>
+
+        <p>
+          Donošenje odluka pomoću uslovnih naredbi.
+        </p>
+
+      </div>
+
+
+
+      <div class="lesson">
+
+        <span class="tag">
+          Petlje
+        </span>
+
+        <h3>for petlja</h3>
+
+        <p>
+          Ponavljanje dela programa više puta.
+        </p>
+
+      </div>
+
+
+
+      <div class="lesson">
+
+        <span class="tag">
+          Funkcije
+        </span>
+
+        <h3>Funkcije</h3>
+
+        <p>
+          Organizovanje koda u funkcije koje se mogu
+          ponovo koristiti.
+        </p>
+
+      </div>
+
+
+
+      <div class="lesson">
+
+        <span class="tag">
+          DOM
+        </span>
+
+        <h3>DOM manipulacija</h3>
+
+        <p>
+          Promena HTML elemenata pomoću JavaScript-a.
+        </p>
+
+      </div>
+
+
+
+      <div class="lesson">
+
+        <span class="tag">
+          Događaji
+        </span>
+
+        <h3>Event listener</h3>
+
+        <p>
+          Reagovanje na klik, unos teksta i druge događaje.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================== -->
+  <!-- SADRŽAJ TUTORIJALA -->
+  <!-- ===================================== -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Lekcija: DOM manipulacija
+    </h2>
+
+
+    <article>
+
+      <h3>
+        Šta je DOM?
+      </h3>
+
+      <p>
+        DOM predstavlja strukturu HTML dokumenta koju
+        JavaScript može da čita i menja.
+      </p>
+
+      <p>
+        Element možemo pronaći pomoću metode
+        <strong>getElementById()</strong>.
+      </p>
+
+
+      <code>const naslov = document.getElementById("naslov");</code>
+
+
+      <p>
+        Nakon toga možemo promeniti njegov sadržaj.
+      </p>
+
+
+      <code>naslov.textContent = "Novi naslov";</code>
+
+
+      <h3>
+        innerHTML
+      </h3>
+
+      <p>
+        Svojstvo innerHTML omogućava da JavaScript
+        ubaci HTML sadržaj u element.
+      </p>
+
+
+      <code>element.innerHTML = "&lt;b&gt;Zdravo&lt;/b&gt;";</code>
+
+
+      <p>
+        Browser će ovaj sadržaj protumačiti kao HTML.
+      </p>
+
+
+      <h3>
+        Primer događaja
+      </h3>
+
+
+      <code>button.addEventListener("click", function() {
+
+    alert("Kliknuli ste dugme!");
+
+});</code>
+
+
+    </article>
+
+  </section>
+
+
+
+  <!-- ===================================== -->
+  <!-- PROFIL -->
+  <!-- NAMERNO RANJIV -->
+  <!-- ===================================== -->
+
+  <section class="section" id="profil">
+
+    <h2 class="section-title">
+      Moj profil
+    </h2>
+
+    <p>
+      Uredi podatke svog CodeLab profila.
+    </p>
+
+
+    <label>
+      Korisničko ime
+    </label>
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Unesite ime"
+    >
+
+
+    <label>
+      O meni
+    </label>
+
+    <textarea
+      id="bio"
+      placeholder="Napišite nešto o sebi..."
+    ></textarea>
+
+
+    <button onclick="updateProfile()">
+      Sačuvaj profil
+    </button>
+
+
+    <div class="profile-preview">
+
+      <h3>
+        Pregled profila
+      </h3>
+
+      <p>
+        <strong>Korisnik:</strong>
+
+        <span id="profileName">
+          Gost
+        </span>
+
+      </p>
+
+      <div id="profileBio">
+
+        Još nema opisa profila.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================== -->
+  <!-- KOMENTARI -->
+  <!-- NAMERNO RANJIVI -->
+  <!-- ===================================== -->
+
+  <section class="section" id="komentari">
+
+    <h2 class="section-title">
+      Komentari
+    </h2>
+
+    <p>
+      Ostavite komentar ispod tutorijala.
+    </p>
+
+
+    <label>
+      Ime
+    </label>
+
+    <input
+      type="text"
+      id="commentName"
+      placeholder="Vaše ime"
+    >
+
+
+    <label>
+      Komentar
+    </label>
+
+    <textarea
+      id="commentText"
+      placeholder="Vaš komentar..."
+    ></textarea>
+
+
+    <button onclick="addComment()">
+      Objavi komentar
+    </button>
+
+
+    <div id="comments">
+
+
+      <div class="comment">
+
+        <strong>Ana</strong>
+
+        <p>
+          Odličan tutorijal, posebno deo o DOM-u.
+        </p>
+
+      </div>
+
+
+      <div class="comment">
+
+        <strong>Marko</strong>
+
+        <p>
+          Konačno razumem razliku između
+          textContent i innerHTML.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <div class="warning">
+
+    Ovaj sajt je napravljen kao lokalna demonstracija
+    za čas i namerno sadrži bezbednosne propuste.
+
+  </div>
+
+
+</main>
+
+
+
+<footer>
+
+  CodeLab JavaScript Tutorijal
+
+</footer>
+
+
+
+<script src="./script.js"></script>
+
+
 </body>
 </html>

